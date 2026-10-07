@@ -48,3 +48,8 @@ plt.ylabel('Acceleration (m/s^2)')
 plt.xlabel('Time (s)')
 plt.legend()
 plt.savefig('/home/aydan/Desktop/CSPC/PW2/Lab A/motion.png')
+# Bonus TODO: Read trajectory.csv, plot the path (x vs y), then compute and plot the speed sqrt(vx^2 + vy^2) over time using np.gradient on each coordinate.
+x, y = np.loadtxt(r"/home/aydan/Desktop/CSPC/PW2/Lab A/trajectory.csv", delimiter=',', skiprows=1, unpack=True)
+vx = np.gradient(x, t)
+vy = np.gradient(y, t)
+v_bonus = np.sqrt(vx**2 + vy**2)
